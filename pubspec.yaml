@@ -1,0 +1,91 @@
+name: project_WawBeans
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  google_fonts: ^6.2.0
+  flutter_svg: ^2.0.10+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+  - assets/images/gambar_32.png
+  - assets/vectors/plus_1_x2.svg
+  - assets/vectors/edit_square_1_x2.svg
+  - assets/vectors/paper_1_x2.svg
+  - assets/vectors/stroke_12_x2.svg
+  - assets/vectors/container_x2.svg
+  - assets/vectors/more_circle_x2.svg
+  - assets/vectors/vector_x2.svg
+  - assets/vectors/stroke_15_x2.svg
+  - assets/vectors/wallet_x2.svg
+  - assets/vectors/plus_2_x2.svg
+  - assets/vectors/discount_2_x2.svg
+  - assets/vectors/vector_11_x2.svg
+  - assets/vectors/container_1_x2.svg
+  - assets/vectors/arcticonsdana_x2.svg
+  - assets/vectors/vector_10_x2.svg
+  - assets/vectors/vector_7_x2.svg
+  - assets/vectors/group_x2.svg
+  - assets/vectors/stroke_17_x2.svg
+  - assets/vectors/group_1_x2.svg
+  - assets/vectors/stroke_14_x2.svg
+  - assets/vectors/vector_3_x2.svg
+  - assets/vectors/stroke_19_x2.svg
+  - assets/images/gambar_11.jpeg
+  - assets/vectors/vector_9_x2.svg
+  - assets/vectors/vector_6_x2.svg
+  - assets/vectors/container_4_x2.svg
+  - assets/vectors/stroke_16_x2.svg
+  - assets/vectors/vector_1_x2.svg
+  - assets/vectors/vector_4_x2.svg
+  - assets/vectors/contents_1_x2.svg
+  - assets/vectors/container_3_x2.svg
+  - assets/images/gambar_34.jpeg
+  - assets/images/gambar_35.jpeg
+  - assets/images/gambar_32.png
+  - assets/images/gambar_3.jpeg
+  - assets/images/gambar_2.jpeg
+  - assets/images/gambar_33.png
+  - assets/images/foto_restu_1.jpeg
+  - assets/images/gambar_31.png
+  - assets/vectors/container_2_x2.svg
+  - assets/vectors/buy_1_x2.svg
+  - assets/vectors/search_x2.svg
+  - assets/vectors/star_3_x2.svg
+  - assets/vectors/filter_1_x2.svg
+  - assets/vectors/star_5_x2.svg
+  - assets/vectors/discount_x2.svg
+  - assets/vectors/stroke_111_x2.svg
+  - assets/vectors/vector_2_x2.svg
+  - assets/vectors/star_x2.svg
+  - assets/vectors/star_1_x2.svg
+  - assets/vectors/chat_1_x2.svg
+  - assets/vectors/vector_8_x2.svg
+  - assets/vectors/home_x2.svg
+  - assets/vectors/star_7_x2.svg
+  - assets/vectors/star_2_x2.svg
+  - assets/images/gambar_32.png
+  - assets/vectors/vector_5_x2.svg
+  - assets/vectors/star_6_x2.svg
+  - assets/vectors/heart_x2.svg
+  - assets/vectors/stroke_1_x2.svg
+  - assets/vectors/paper_2_x2.svg
+  - assets/vectors/container_5_x2.svg
+  - assets/vectors/vector_12_x2.svg
+  - assets/vectors/plus_3_x2.svg
+  - assets/vectors/plus_x2.svg
+

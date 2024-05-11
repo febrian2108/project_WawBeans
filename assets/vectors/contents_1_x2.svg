@@ -1,0 +1,7 @@
+<svg width="40" height="30" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<mask id="mask_0_i_4_572;270_58221" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="15">
+<path d="M0,0L0,30L40,30L40,0L0,0Z" clip-rule="evenodd" fill-rule="evenodd" fill="#F7FCFF"/>
+</mask>
+<path d="M0,0L0,30L40,30L40,0L0,0Z" clip-rule="evenodd" fill-rule="evenodd" fill="#F7FCFF"/>
+<path d="M0,0L0,15L40,15L40,0L0,0Z" clip-rule="evenodd" fill-rule="evenodd" fill="#E31D1C"/>
+</svg>
