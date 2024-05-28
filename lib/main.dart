@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_WawBeans/pages/home_page.dart';
 import 'package:project_WawBeans/pages/page_login.dart';
 
 
@@ -14,12 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'WawBeans!',
       home: Scaffold(
 
-        body: PageLogin(),
-        // body: HomePage(),
-        // body: OrderPage(),
-        // body: PageLogin(),
-        // body: PageLogin2(),
-        // body: PaymentPage(),
+        body: HomePage(),
 
       ),
     );

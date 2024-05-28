@@ -396,24 +396,6 @@ Widget _buildMenu() {
                                     Container(
                                       margin: EdgeInsets.fromLTRB(
                                           0, 0.6, 0, 2.6),
-                                      width: 12.5,
-                                      height: 11.9,
-                                      child: SizedBox(
-                                        width: 12.5,
-                                        height: 11.9,
-                                        child: SvgPicture.network(
-                                          'assets/vectors/star_x2.svg',
-                                        ),
-                                      ),
-                                    ),
-                                    Text(
-                                      '4.8',
-                                      style: GoogleFonts.getFont(
-                                        'Poppins',
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 10,
-                                        color: Color(0xFFFFFFFF),
-                                      ),
                                     ),
                                   ],
                                 ),
@@ -496,25 +478,8 @@ Widget _buildMenu() {
                                     Container(
                                       margin: EdgeInsets.fromLTRB(
                                           0, 0.6, 0, 2.6),
-                                      width: 12.5,
-                                      height: 11.9,
-                                      child: SizedBox(
-                                        width: 12.5,
-                                        height: 11.9,
-                                        child: SvgPicture.network(
-                                          'assets/vectors/star_5_x2.svg',
-                                        ),
-                                      ),
                                     ),
-                                    Text(
-                                      '4.9',
-                                      style: GoogleFonts.getFont(
-                                        'Poppins',
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 10,
-                                        color: Color(0xFFFFFFFF),
-                                      ),
-                                    ),
+                                    
                                   ],
                                 ),
                               ),
@@ -595,24 +560,6 @@ Widget _buildMenu() {
                                     Container(
                                       margin: EdgeInsets.fromLTRB(
                                           0, 0.6, 0, 2.6),
-                                      width: 12.5,
-                                      height: 11.9,
-                                      child: SizedBox(
-                                        width: 12.5,
-                                        height: 11.9,
-                                        child: SvgPicture.network(
-                                          'assets/vectors/star_3_x2.svg',
-                                        ),
-                                      ),
-                                    ),
-                                    Text(
-                                      '4.9',
-                                      style: GoogleFonts.getFont(
-                                        'Poppins',
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 10,
-                                        color: Color.fromARGB(255, 255, 255, 255),
-                                      ),
                                     ),
                                   ],
                                 ),
@@ -708,24 +655,6 @@ Widget _buildMenu2() {
                               children: [
                                 Container(
                                   margin: EdgeInsets.fromLTRB(0, 0.6, 0, 2.6),
-                                  width: 12.5,
-                                  height: 11.9,
-                                  child: SizedBox(
-                                    width: 12.5,
-                                    height: 11.9,
-                                    child: SvgPicture.network(
-                                      'assets/vectors/star_2_x2.svg',
-                                    ),
-                                  ),
-                                ),
-                                Text(
-                                  '4.9',
-                                  style: GoogleFonts.getFont(
-                                    'Poppins',
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 10,
-                                    color: Color(0xFFFFFFFF),
-                                  ),
                                 ),
                               ],
                             ),
@@ -807,24 +736,6 @@ Widget _buildMenu2() {
                               children: [
                                 Container(
                                   margin: EdgeInsets.fromLTRB(0, 0.6, 0, 2.6),
-                                  width: 12.5,
-                                  height: 11.9,
-                                  child: SizedBox(
-                                    width: 12.5,
-                                    height: 11.9,
-                                    child: SvgPicture.network(
-                                      'assets/vectors/star_7_x2.svg',
-                                    ),
-                                  ),
-                                ),
-                                Text(
-                                  '4.9',
-                                  style: GoogleFonts.getFont(
-                                    'Poppins',
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 10,
-                                    color: Color(0xFFFFFFFF),
-                                  ),
                                 ),
                               ],
                             ),
@@ -906,24 +817,6 @@ Widget _buildMenu2() {
                               children: [
                                 Container(
                                   margin: EdgeInsets.fromLTRB(0, 0.6, 0, 2.6),
-                                  width: 12.5,
-                                  height: 11.9,
-                                  child: SizedBox(
-                                    width: 12.5,
-                                    height: 11.9,
-                                    child: SvgPicture.network(
-                                      'assets/vectors/star_1_x2.svg',
-                                    ),
-                                  ),
-                                ),
-                                Text(
-                                  '4.9',
-                                  style: GoogleFonts.getFont(
-                                    'Poppins',
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 10,
-                                    color: Color(0xFFFFFFFF),
-                                  ),
                                 ),
                               ],
                             ),
