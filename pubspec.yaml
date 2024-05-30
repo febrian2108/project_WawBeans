@@ -45,7 +45,7 @@ flutter:
   - assets/vectors/stroke_14_x2.svg
   - assets/vectors/vector_3_x2.svg
   - assets/vectors/stroke_19_x2.svg
-  - assets/images/gambar_11.jpeg
+  - assets/images/gambar_1.png
   - assets/vectors/vector_9_x2.svg
   - assets/vectors/vector_6_x2.svg
   - assets/vectors/container_4_x2.svg
@@ -54,6 +54,7 @@ flutter:
   - assets/vectors/vector_4_x2.svg
   - assets/vectors/contents_1_x2.svg
   - assets/vectors/container_3_x2.svg
+  - assets/vectors/heart_2_x2.svg
   - assets/images/gambar_34.jpeg
   - assets/images/gambar_35.jpeg
   - assets/images/gambar_32.png
@@ -68,7 +69,6 @@ flutter:
   - assets/vectors/star_3_x2.svg
   - assets/vectors/filter_1_x2.svg
   - assets/vectors/star_5_x2.svg
-  - assets/vectors/discount_x2.svg
   - assets/vectors/stroke_111_x2.svg
   - assets/vectors/vector_2_x2.svg
   - assets/vectors/star_x2.svg

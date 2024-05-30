@@ -1,9 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -17,15 +16,13 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildProfileInfo(),
+                ProfileInfo(),
                 SizedBox(height: 20),
                 _buildSearch(),
-                SizedBox(
-                  height: 35,
-                ),
+                SizedBox(height: 35),
                 _buildPromoBanner(),
                 SizedBox(height: 30),
-                _buildMenu(), // Menambahkan widget search
+                _buildMenu(),
                 SizedBox(height: 23),
                 _buildMenu2(),
                 SizedBox(height: 23),
@@ -38,61 +35,9 @@ class HomePage extends StatelessWidget {
     );
   }
 
-
-//Bagian Profile
-  Widget _buildProfileInfo() {
-    return Container(
-      margin: EdgeInsets.fromLTRB(23, 0, 23, 23),
-      child: Align(
-        alignment: Alignment.topLeft,
-        child: SizedBox(
-          width: double.infinity, // Mengatur lebar sesuai lebar layar
-          child: Container(
-            padding: EdgeInsets.fromLTRB(0, 1, 1, 1),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Lokasi',
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        color: Color.fromARGB(255, 250, 250, 250),
-                      ),
-                    ),
-                    Text(
-                      'Tanjung Seneng Bandar Lampung',
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                      ),
-                    ),
-                  ],
-                ),
-                CircleAvatar(
-                  backgroundImage: AssetImage(
-                    'assets/images/foto_restu_1.jpeg',
-                  ),
-                  radius: 23, // Mengatur ukuran radius sesuai kebutuhan
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-//Bagian Profile selesai
-
-//Bagian Search
   Widget _buildSearch() {
     return Container(
-      margin:
-          EdgeInsets.symmetric(horizontal: 23), // Mengatur margin horizontal
+      margin: EdgeInsets.symmetric(horizontal: 23), // Mengatur margin horizontal
       decoration: BoxDecoration(
         color: Color.fromARGB(255, 104, 104, 104),
         borderRadius: BorderRadius.circular(15),
@@ -139,109 +84,104 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-//Bagian search selesai
 
-//Bagian Banner
   Widget _buildPromoBanner() {
     return Center(
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
-            bottomRight: Radius.circular(15),
-            bottomLeft: Radius.circular(15),
-          ),
+    child: Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
+          bottomRight: Radius.circular(15),
+          bottomLeft: Radius.circular(15),
         ),
-        child: Stack(
-          children: [
-            Positioned(
-              top: -23,
-              left: 0,
-              child: ImageFiltered(
-                imageFilter: ImageFilter.blur(
-                  sigmaX: 1,
-                  sigmaY: 1,
+      ),
+      child: Stack(
+        children: [
+          Positioned(
+            top: -23,
+            left: 0,
+            child: ImageFiltered(
+              imageFilter: ImageFilter.blur(
+                sigmaX: 1,
+                sigmaY: 1,
+              ),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                  ),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: NetworkImage(
+                      'assets/images/gambar_2.jpeg',
+                    ),
+                  ),
                 ),
                 child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                    ),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(
-                        'assets/images/gambar_2.jpeg',
-                      ),
-                    ),
-                  ),
-                  child: Container(
-                    width: 371,
-                    height: 179.3,
-                  ),
+                  width: 371,
+                  height: 179.3,
                 ),
               ),
             ),
-            SizedBox(
-              width: 371,
-              height: 180.6,
-              child: Container(
-                padding: EdgeInsets.fromLTRB(18.7, 23, 0, 40.3),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(bottom: 19.4),
+          ),
+          SizedBox(
+            width: 371,
+            height: 180.6,
+            child: Container(
+              padding: EdgeInsets.fromLTRB(18.7, 23, 0, 40.3),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(bottom: 19.4),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Color(0xFFDE3D3D),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
                       child: Container(
-                        decoration: BoxDecoration(
-                          color: Color(0xFFDE3D3D),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: Container(
-                          padding: EdgeInsets.fromLTRB(8.6, 2.4, 9.7, 4.4),
-                          child: Text(
-                            'Promo',
-                            style: GoogleFonts.getFont(
-                              'Poppins',
-                              fontWeight: FontWeight.w600,
-                              fontSize: 10,
-                              color: Color(0xFFFFFFFF),
-                            ),
+                        padding: EdgeInsets.fromLTRB(8.6, 2.4, 9.7, 4.4),
+                        child: Text(
+                          'Promo',
+                          style: GoogleFonts.getFont(
+                            'Poppins',
+                            fontWeight: FontWeight.w600,
+                            fontSize: 10,
+                            color: Color(0xFFFFFFFF),
                           ),
                         ),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(0.2, 0, 0.2, 0),
-                      child: Text(
-                        'Buy one get one FREE',
-                        textAlign: TextAlign.start,
-                        style: GoogleFonts.getFont(
-                          'Poppins',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 25,
-                          color: Color(0xFFFFFFFF),
-                        ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0.2, 0, 0.2, 0),
+                    child: Text(
+                      'Buy one get one FREE',
+                      textAlign: TextAlign.start,
+                      style: GoogleFonts.getFont(
+                        'Poppins',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 25,
+                        color: Color(0xFFFFFFFF),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
-    );
+    ),
+  );
   }
 
-//Bagian Banner Selesai
-
-//Bagian Menu
-Widget _buildMenu() {
-  return Column(
+  Widget _buildMenu() {
+    return Column(
     mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
@@ -394,8 +334,8 @@ Widget _buildMenu() {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
-                                      margin: EdgeInsets.fromLTRB(
-                                          0, 0.6, 0, 2.6),
+                                      margin:
+                                          EdgeInsets.fromLTRB(0, 0.6, 0, 2.6),
                                     ),
                                   ],
                                 ),
@@ -476,10 +416,9 @@ Widget _buildMenu() {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
-                                      margin: EdgeInsets.fromLTRB(
-                                          0, 0.6, 0, 2.6),
+                                      margin:
+                                          EdgeInsets.fromLTRB(0, 0.6, 0, 2.6),
                                     ),
-                                    
                                   ],
                                 ),
                               ),
@@ -558,8 +497,8 @@ Widget _buildMenu() {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
-                                      margin: EdgeInsets.fromLTRB(
-                                          0, 0.6, 0, 2.6),
+                                      margin:
+                                          EdgeInsets.fromLTRB(0, 0.6, 0, 2.6),
                                     ),
                                   ],
                                 ),
@@ -614,10 +553,10 @@ Widget _buildMenu() {
       ),
     ],
   );
-}
+  }
 
-Widget _buildMenu2() {
-  return Container(
+  Widget _buildMenu2() {
+    return Container(
     margin: EdgeInsets.fromLTRB(30, 0, 27, 35.9),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -649,8 +588,7 @@ Widget _buildMenu2() {
                           child: Container(
                             padding: EdgeInsets.fromLTRB(6.2, 4, 0, 0),
                             child: Row(
-                              mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
@@ -730,8 +668,7 @@ Widget _buildMenu2() {
                           child: Container(
                             padding: EdgeInsets.fromLTRB(6.2, 4, 0, 0),
                             child: Row(
-                              mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
@@ -811,8 +748,7 @@ Widget _buildMenu2() {
                           child: Container(
                             padding: EdgeInsets.fromLTRB(6.2, 4, 0, 0),
                             child: Row(
-                              mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
@@ -869,15 +805,17 @@ Widget _buildMenu2() {
       ],
     ),
   );
-}
+  }
 
-Widget _buildNavbar() {
-  return Container(
+  Widget _buildNavbar() {
+    return Container(
     margin: EdgeInsets.fromLTRB(23, 0, 23, 23),
     decoration: BoxDecoration(
       color: const Color.fromARGB(255, 2, 2, 2),
-      border: Border.all(color: Colors.grey), // Menambahkan border dengan warna abu-abu
-      borderRadius: BorderRadius.circular(15), // Menambahkan border radius agar terlihat lebih baik
+      border: Border.all(
+          color: Colors.grey), // Menambahkan border dengan warna abu-abu
+      borderRadius: BorderRadius.circular(
+          15), // Menambahkan border radius agar terlihat lebih baik
       boxShadow: [
         BoxShadow(
           color: Colors.black.withOpacity(0.2),
@@ -923,12 +861,12 @@ Widget _buildNavbar() {
                     width: 23.1,
                     height: 23.1,
                     child: SvgPicture.network(
-                      'assets/vectors/discount_x2.svg',
+                      'assets/vectors/heart_2_x2.svg',
                     ),
                   ),
                   SizedBox(height: 4),
                   Text(
-                    'Promo',
+                    'Favorit',
                     style: GoogleFonts.getFont(
                       'Mulish',
                       fontWeight: FontWeight.w400,
@@ -949,7 +887,7 @@ Widget _buildNavbar() {
                   ),
                   SizedBox(height: 4),
                   Text(
-                    'Order',
+                    'Keranjang',
                     style: GoogleFonts.getFont(
                       'Mulish',
                       fontWeight: FontWeight.w400,
@@ -970,7 +908,7 @@ Widget _buildNavbar() {
                   ),
                   SizedBox(height: 4),
                   Text(
-                    'Chat',
+                    'Obrolan',
                     style: GoogleFonts.getFont(
                       'Mulish',
                       fontWeight: FontWeight.w400,
@@ -986,6 +924,84 @@ Widget _buildNavbar() {
       ),
     ),
   );
+  }
 }
 
+class ProfileInfo extends StatefulWidget {
+  @override
+  _ProfileInfoState createState() => _ProfileInfoState();
+}
+
+class _ProfileInfoState extends State<ProfileInfo> {
+  String _selectedLocation = 'Tanjung Seneng Bandar Lampung';
+  List<String> _locations = ['Tanjung Seneng Bandar Lampung', 'Gunung Sulah Bandar Lampung'];
+  int _selectedLocationIndex = 0;
+
+  void _toggleLocation() {
+    setState(() {
+      _selectedLocationIndex = (_selectedLocationIndex + 1) % _locations.length;
+      _selectedLocation = _locations[_selectedLocationIndex];
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.fromLTRB(23, 0, 23, 23),
+      child: Align(
+        alignment: Alignment.topLeft,
+        child: SizedBox(
+          width: double.infinity,
+          child: Container(
+            padding: EdgeInsets.fromLTRB(0, 1, 1, 1),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Lokasi',
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                        color: Color.fromARGB(255, 250, 250, 250),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: _toggleLocation,
+                      child: Row(
+                        children: [
+                          Text(
+                            _selectedLocation,
+                            style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                          ),
+                          SizedBox(width: 5),
+                          SvgPicture.asset(
+                            'assets/vectors/stroke_111_x2.svg',
+                            width: 11.7,
+                            height: 5.8,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                CircleAvatar(
+                  backgroundImage: AssetImage(
+                    'assets/images/foto_restu_1.jpeg',
+                  ),
+                  radius: 23,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
