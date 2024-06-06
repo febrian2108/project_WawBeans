@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:projectWawBeans/pages/order.dart';
 import 'home_page.dart'; // Impor halaman tujuan untuk navigasi
 
 class DetailPage extends StatelessWidget {
@@ -35,7 +36,7 @@ class DetailPage extends StatelessWidget {
                               );
                             },
                             child: SvgPicture.asset(
-                              'assets/vectors/stroke5.svg', 
+                              'assets/vectors/kembali2.svg', 
                               width: 24,
                               height: 24,
                             ),
@@ -107,40 +108,13 @@ class DetailPage extends StatelessWidget {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SvgPicture.asset(
-                                    'assets/vectors/star_x2.svg',
-                                    width: 19.6,
-                                    height: 20.4,
-                                  ),
-                                  SizedBox(width: 8.5),
-                                  Text(
-                                    '4.8',
-                                    style: GoogleFonts.getFont(
-                                      'Poppins',
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 12,
-                                      color: Color(0xFFFFF9F9),
-                                    ),
-                                  ),
-                                  SizedBox(width: 10.7),
-                                  Text(
-                                    '(245)',
-                                    style: GoogleFonts.getFont(
-                                      'Poppins',
-                                      fontWeight: FontWeight.w300,
-                                      fontSize: 12,
-                                      color: Color(0xFFFFF9F9),
-                                    ),
-                                  ),
-                                ],
                               ),
                             ],
                           ),
                           Row(
                             children: [
                               SvgPicture.asset(
-                                'assets/vectors/plus_2_x2.svg',
+                                'assets/vectors/plus_4_x2.svg',
                                 width: 17.5,
                                 height: 17.5,
                               ),
@@ -160,7 +134,7 @@ class DetailPage extends StatelessWidget {
                         width: 17.5,
                         height: 17.5,
                         child: SvgPicture.network(
-                          'assets/vectors/plus_4_x2.svg',
+                          'assets/vectors/plus_2_x2.svg',
                         ),
                       ),
                             ],
@@ -213,7 +187,7 @@ class DetailPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
+                      MaterialPageRoute(builder: (context) => OrderPage()),
                     );
                   },
                   style: TextButton.styleFrom(
@@ -223,12 +197,12 @@ class DetailPage extends StatelessWidget {
                     width: double.infinity,
                     height: 43.3,
                     decoration: BoxDecoration(
-                      color: Color(0xFF1A73E8),
+                      color: Color(0xFFDE6D3D),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Center(
                       child: Text(
-                        'Order',
+                        'Pesan',
                         style: GoogleFonts.getFont(
                           'Poppins',
                           fontWeight: FontWeight.w600,

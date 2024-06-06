@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:projectWawBeans/pages/detail_page.dart';
 import 'package:projectWawBeans/pages/paymentpage.dart';
 import 'home_page.dart';
 import 'history.dart';
@@ -73,7 +74,8 @@ class _KeranjangPageState extends State<KeranjangPage> {
                                 borderRadius: BorderRadius.circular(10),
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: AssetImage('assets/images/gambar_32.png'),
+                                  image:
+                                      AssetImage('assets/images/gambar_32.png'),
                                 ),
                               ),
                               height: 114,
@@ -119,7 +121,8 @@ class _KeranjangPageState extends State<KeranjangPage> {
                                     ),
                                   ),
                                   Container(
-                                    margin: EdgeInsets.fromLTRB(1.2, 0, 18.4, 0),
+                                    margin:
+                                        EdgeInsets.fromLTRB(1.2, 0, 18.4, 0),
                                     child: Text(
                                       'Rp 20.000',
                                       style: GoogleFonts.poppins(
@@ -143,7 +146,8 @@ class _KeranjangPageState extends State<KeranjangPage> {
                                   GestureDetector(
                                     onTap: decrementItemCount,
                                     child: Container(
-                                      margin: EdgeInsets.fromLTRB(0, 3.6, 18.2, 2.9),
+                                      margin: EdgeInsets.fromLTRB(
+                                          0, 3.6, 18.2, 2.9),
                                       width: 17.5,
                                       height: 17.5,
                                       child: SvgPicture.asset(
@@ -165,7 +169,8 @@ class _KeranjangPageState extends State<KeranjangPage> {
                                   GestureDetector(
                                     onTap: incrementItemCount,
                                     child: Container(
-                                      margin: EdgeInsets.fromLTRB(0, 2.8, 0, 3.7),
+                                      margin:
+                                          EdgeInsets.fromLTRB(0, 2.8, 0, 3.7),
                                       width: 17.5,
                                       height: 17.5,
                                       child: SvgPicture.asset(
@@ -189,7 +194,7 @@ class _KeranjangPageState extends State<KeranjangPage> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => PaymentPage()),
+                MaterialPageRoute(builder: (context) => DetailPage()),
               );
             },
             child: Container(

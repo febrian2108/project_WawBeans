@@ -23,8 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'WawBeans!',
       home: Scaffold(
 
-        body: KeranjangPage(),
-              // WelcomePage(),
+        body: DetailPage(),
 
       ),
     );
