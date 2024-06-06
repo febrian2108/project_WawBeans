@@ -7,7 +7,6 @@ import 'package:projectWawBeans/pages/keranjang.dart';
 import 'package:projectWawBeans/pages/obrolan.dart';
 import 'package:projectWawBeans/pages/order.dart';
 import 'package:projectWawBeans/pages/order2.dart';
-import 'package:projectWawBeans/pages/order_driver.dart';
 import 'package:projectWawBeans/pages/page_login.dart';
 import 'package:projectWawBeans/pages/page_login_2.dart';
 import 'package:projectWawBeans/pages/paymentpage.dart';
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
       title: 'WawBeans!',
       home: Scaffold(
 
-        body: OrderDriver(),
+        body: page_login(),
 
       ),
     );

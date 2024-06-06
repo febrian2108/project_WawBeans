@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:projectWawBeans/pages/detail_page.dart';
 import 'package:projectWawBeans/pages/home_page.dart';
 import 'package:projectWawBeans/pages/keranjang.dart';
-import 'package:projectWawBeans/pages/obrolan.dart';
+import 'package:projectWawBeans/pages/obrolan.dart'; // Import halaman detail
 
 class HistoryPage extends StatelessWidget {
   @override
@@ -48,6 +49,7 @@ class HistoryPage extends StatelessWidget {
                     description: 'With Chocolate',
                     status: 'Pesanan Sudah Selesai',
                     price: 'Rp 20.000',
+                    context: context, // Tambahkan context untuk navigasi
                   ),
                   _buildDivider(),
                   _buildOrderItem(
@@ -57,6 +59,7 @@ class HistoryPage extends StatelessWidget {
                     description: 'With Oat Milk',
                     status: 'Pesanan Sudah Selesai',
                     price: 'Rp 20.000',
+                    context: context, // Tambahkan context untuk navigasi
                   ),
                   _buildDivider(),
                 ],
@@ -77,6 +80,7 @@ class HistoryPage extends StatelessWidget {
     required String description,
     required String status,
     required String price,
+    required BuildContext context, // Tambahkan BuildContext sebagai parameter
   }) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 27, vertical: 8),
@@ -157,25 +161,33 @@ class HistoryPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 8),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Color(0xFFD9D9D9),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0x40000000),
-                      offset: Offset(0, 4),
-                      blurRadius: 2,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DetailPage()), // Navigasi ke halaman detail
+                  );
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Color(0xFFD9D9D9),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0x40000000),
+                        offset: Offset(0, 4),
+                        blurRadius: 2,
+                      ),
+                    ],
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 10.3, vertical: 4),
+                  child: Text(
+                    'Pesan Lagi',
+                    style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 10,
+                      color: Color(0xFF000000),
                     ),
-                  ],
-                ),
-                padding: EdgeInsets.symmetric(horizontal: 10.3, vertical: 4),
-                child: Text(
-                  'Pesan Lagi',
-                  style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 10,
-                    color: Color(0xFF000000),
                   ),
                 ),
               ),
@@ -195,145 +207,125 @@ class HistoryPage extends StatelessWidget {
   }
 
   Widget _buildNavbar(BuildContext context) {
-  return BottomAppBar(
-    color: Color(0xFF000000),
-    child: Padding(
-      padding: EdgeInsets.symmetric(vertical: 8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => HomePage()),
-              );
-            },
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SvgPicture.asset(
-                  'assets/vectors/home_4_x2_1.svg',
-                  width: 23.1,
-                  height: 22.6,
-                ),
-                SizedBox(height: 4),
-                Text(
-                  'Beranda',
-                  style: GoogleFonts.mulish(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 9,
-                    color: Colors.white,
+    return BottomAppBar(
+      color: Color(0xFF000000),
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SvgPicture.asset(
+                    'assets/vectors/home_4_x2_1.svg',
+                    width: 23.1,
+                    height: 22.6,
                   ),
-                ),
-              ],
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => HistoryPage()),
-              );
-            },
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SvgPicture.asset(
-                  'assets/vectors/vector_21_x2.svg',
-                  width: 23.1,
-                  height: 22.6,
-                ),
-                SizedBox(height: 4),
-                Text(
-                  'History',
-                  style: GoogleFonts.mulish(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 9,
-                    color: Color(0xFFDE6D3D),
+                  SizedBox(height: 4),
+                  Text(
+                    'Beranda',
+                    style: GoogleFonts.mulish(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 9,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => KeranjangPage()),
-              );
-            },
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SvgPicture.asset(
-                  'assets/vectors/buy_6_1_1x2.svg',
-                  width: 23.1,
-                  height: 22.6,
-                ),
-                SizedBox(height: 4),
-                Text(
-                  'Keranjang',
-                  style: GoogleFonts.mulish(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 9,
-                    color: Color(0xFFFFFFFF),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HistoryPage()),
+                );
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SvgPicture.asset(
+                    'assets/vectors/vector_21_x2.svg',
+                    width: 23.1,
+                    height: 22.6,
                   ),
-                ),
-              ],
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ObrolanPage()),
-              );
-            },
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SvgPicture.asset(
-                  'assets/vectors/chat_3_x2.svg',
-                  width: 20,
-                  height: 20,
-                ),
-                SizedBox(height: 4),
-                Text(
-                  'Obrolan',
-                  style: GoogleFonts.mulish(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 9,
-                    color: Color(0xFFFFFFFF),
+                  SizedBox(height: 4),
+                  Text(
+                    'History',
+                    style: GoogleFonts.mulish(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 9,
+                      color: Color(0xFFDE6D3D),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+            // Tombol aktif saat ini
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => KeranjangPage()),
+                );
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SvgPicture.asset(
+                    'assets/vectors/buy_6_1_1x2.svg',
+                    width: 23.1,
+                    height: 22.6,
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    'Keranjang',
+                    style: GoogleFonts.mulish(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 9,
+                      color: Color(0xFFFFFFFF),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ObrolanPage()),
+                );
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SvgPicture.asset(
+                    'assets/vectors/chat_3_x2.svg',
+                    width: 20,
+                    height: 20,
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    'Obrolan',
+                    style: GoogleFonts.mulish(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 9,
+                      color: Color(0xFFFFFFFF),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
-    ),
-  );
-}
-
-  Widget _buildNavbarItem(String iconPath, String label, Color labelColor, double iconWidth, double iconHeight) {
-    return Column(
-      children: [
-        SvgPicture.network(
-          iconPath,
-          width: iconWidth,
-          height: iconHeight,
-        ),
-        SizedBox(height: 4),
-        Text(
-          label,
-          style: GoogleFonts.mulish(
-            fontWeight: FontWeight.w400,
-            fontSize: 9,
-            color: labelColor,
-          ),
-        ),
-      ],
     );
   }
 }

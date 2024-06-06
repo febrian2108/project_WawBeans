@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:projectWawBeans/pages/home_page.dart';
 import 'package:projectWawBeans/pages/order.dart';
 import 'detail_page.dart'; // Pastikan Anda sudah mengimpor file detail_page.dart
 import 'order2.dart'; // Impor file order2.dart
@@ -419,7 +420,7 @@ class OrderPage2 extends StatelessWidget {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => PaymentPage()),
+              MaterialPageRoute(builder: (context) => HomePage()),
             );
           },
           child: Container(
