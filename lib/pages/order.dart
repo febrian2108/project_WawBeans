@@ -98,7 +98,7 @@ class OrderPage extends StatelessWidget {
               _buildOrderTypeOption('PickUp', Color(0xFFD9D9D9), Color(0xFF000000), () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Order2Page()),
+                  MaterialPageRoute(builder: (context) => OrderPage2()),
                 );
               }),
             ],
@@ -302,7 +302,7 @@ class OrderPage extends StatelessWidget {
             height: 1,
           ),
           SizedBox(
-            height: 10,
+            height: 15,
           ),
           _buildPaymentDetailRow('Ongkir', 'Rp 5000'),
           Container(

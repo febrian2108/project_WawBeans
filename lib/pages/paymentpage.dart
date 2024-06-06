@@ -92,7 +92,7 @@ class PaymentPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 10),
                 child: Center(
                   child: Text(
-                    'Bayar',
+                    'Oke',
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
