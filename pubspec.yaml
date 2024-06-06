@@ -1,4 +1,4 @@
-name: project_WawBeans
+name: projectWawBeans
 description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -23,6 +23,7 @@ flutter:
   uses-material-design: true
   assets:
   - assets/images/gambar_32.png
+  - assets/vectors/stroke5.svg
   - assets/vectors/plus_1_x2.svg
   - assets/vectors/edit_square_1_x2.svg
   - assets/vectors/paper_1_x2.svg
@@ -37,6 +38,15 @@ flutter:
   - assets/vectors/vector_11_x2.svg
   - assets/vectors/container_1_x2.svg
   - assets/vectors/arcticonsdana_x2.svg
+  - assets/vectors/vector_23_x2_11.svg
+  - assets/images/gambar_101.png
+  - assets/vectors/chat_on.svg
+  - assets/vectors/group_3_x2_1.svg
+  - assets/vectors/stroke_110_x2_1.svg
+  - assets/vectors/kembali.svg
+  - assets/vectors/kembali1.svg
+  - assets/vectors/kembali2.svg
+  - assets/vectors/vector_21_x2.svg
   - assets/vectors/vector_10_x2.svg
   - assets/vectors/vector_7_x2.svg
   - assets/vectors/group_x2.svg
@@ -45,7 +55,14 @@ flutter:
   - assets/vectors/stroke_14_x2.svg
   - assets/vectors/vector_3_x2.svg
   - assets/vectors/stroke_19_x2.svg
+  - assets/vectors/chat_3_x2.svg
+  - assets/vectors/buy_6_1_1x2.svg
   - assets/images/gambar_1.png
+  - assets/vectors/group_1_x2(1)_1.svg
+  - assets/vectors/buy_2_x2(1).svg
+  - assets/vectors/keranjang_on.svg
+  - assets/vectors/home_4_x2_1.svg
+  - assets/vectors/plus_4_x2.svg
   - assets/vectors/vector_9_x2.svg
   - assets/vectors/vector_6_x2.svg
   - assets/vectors/container_4_x2.svg
@@ -55,6 +72,9 @@ flutter:
   - assets/vectors/contents_1_x2.svg
   - assets/vectors/container_3_x2.svg
   - assets/vectors/heart_2_x2.svg
+  - assets/vectors/stroke_1_x2(1).svg
+  - assets/vectors/min_5_x2.svg
+  - assets/vectors/buy_2_x2.svg
   - assets/images/gambar_34.jpeg
   - assets/images/gambar_35.jpeg
   - assets/images/gambar_32.png
@@ -88,4 +108,5 @@ flutter:
   - assets/vectors/vector_12_x2.svg
   - assets/vectors/plus_3_x2.svg
   - assets/vectors/plus_x2.svg
+  - assets/vectors/vector_12_x2_1.svg
 

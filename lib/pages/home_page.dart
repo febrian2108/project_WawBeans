@@ -3,12 +3,15 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:projectWawBeans/pages/history.dart';
+import 'package:projectWawBeans/pages/keranjang.dart';
+import 'package:projectWawBeans/pages/obrolan.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 0, 0),
+      backgroundColor: Color(0xFF161616),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -25,13 +28,12 @@ class HomePage extends StatelessWidget {
                 _buildMenu(),
                 SizedBox(height: 23),
                 _buildMenu2(),
-                SizedBox(height: 23),
-                _buildNavbar(),
               ],
             ),
           ),
         ),
       ),
+      bottomNavigationBar: _buildNavbar(context),
     );
   }
 
@@ -807,126 +809,127 @@ class HomePage extends StatelessWidget {
   );
   }
 
-  Widget _buildNavbar() {
-    return Container(
-    margin: EdgeInsets.fromLTRB(23, 0, 23, 23),
-    decoration: BoxDecoration(
-      color: const Color.fromARGB(255, 2, 2, 2),
-      border: Border.all(
-          color: Colors.grey), // Menambahkan border dengan warna abu-abu
-      borderRadius: BorderRadius.circular(
-          15), // Menambahkan border radius agar terlihat lebih baik
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black.withOpacity(0.2),
-          spreadRadius: 1,
-          blurRadius: 5,
-          offset: Offset(0, 2), // changes position of shadow
-        ),
-      ],
-    ),
-    child: Container(
-      padding: EdgeInsets.fromLTRB(0, 11.5, 0, 5.5),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
+Widget _buildNavbar(BuildContext context) {
+  return BottomAppBar(
+    color: Color(0xFF000000),
+    child: Padding(
+      padding: EdgeInsets.symmetric(vertical: 8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Column(
-                children: [
-                  SizedBox(
-                    width: 23.9,
-                    height: 24.1,
-                    child: SvgPicture.network(
-                      'assets/vectors/home_x2.svg',
-                    ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+              );
+            },
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SvgPicture.asset(
+                  'assets/vectors/home_x2.svg',
+                  width: 23.1,
+                  height: 22.6,
+                ),
+                SizedBox(height: 4),
+                Text(
+                  'Beranda',
+                  style: GoogleFonts.mulish(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 9,
+                    color: Color(0xFFDE6D3D),
                   ),
-                  SizedBox(height: 4),
-                  Text(
-                    'Beranda',
-                    style: GoogleFonts.getFont(
-                      'Mulish',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 9,
-                      color: Color(0xFFDE6D3D),
-                    ),
+                ),
+              ],
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HistoryPage()),
+              );
+            },
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SvgPicture.asset(
+                  'assets/vectors/vector_12_x2_1.svg',
+                  width: 23.1,
+                  height: 22.6,
+                ),
+                SizedBox(height: 4),
+                Text(
+                  'History',
+                  style: GoogleFonts.mulish(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 9,
+                    color: Color(0xFFFFFFFF),
                   ),
-                ],
-              ),
-              Column(
-                children: [
-                  SizedBox(
-                    width: 23.1,
-                    height: 23.1,
-                    child: SvgPicture.network(
-                      'assets/vectors/heart_2_x2.svg',
-                    ),
+                ),
+              ],
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => KeranjangPage()),
+              );
+            },
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SvgPicture.asset(
+                  'assets/vectors/buy_6_1_1x2.svg',
+                  width: 23.1,
+                  height: 22.6,
+                ),
+                SizedBox(height: 4),
+                Text(
+                  'Keranjang',
+                  style: GoogleFonts.mulish(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 9,
+                    color: Color(0xFFFFFFFF),
                   ),
-                  SizedBox(height: 4),
-                  Text(
-                    'Favorit',
-                    style: GoogleFonts.getFont(
-                      'Mulish',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 9,
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
+                ),
+              ],
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ObrolanPage()),
+              );
+            },
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SvgPicture.asset(
+                  'assets/vectors/chat_3_x2.svg',
+                  width: 20,
+                  height: 20,
+                ),
+                SizedBox(height: 4),
+                Text(
+                  'Obrolan',
+                  style: GoogleFonts.mulish(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 9,
+                    color: Color(0xFFFFFFFF),
                   ),
-                ],
-              ),
-              Column(
-                children: [
-                  SizedBox(
-                    width: 23.1,
-                    height: 22.6,
-                    child: SvgPicture.network(
-                      'assets/vectors/buy_1_x2.svg',
-                    ),
-                  ),
-                  SizedBox(height: 4),
-                  Text(
-                    'Keranjang',
-                    style: GoogleFonts.getFont(
-                      'Mulish',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 9,
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  SizedBox(
-                    width: 20,
-                    height: 20,
-                    child: SvgPicture.network(
-                      'assets/vectors/chat_1_x2.svg',
-                    ),
-                  ),
-                  SizedBox(height: 4),
-                  Text(
-                    'Obrolan',
-                    style: GoogleFonts.getFont(
-                      'Mulish',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 9,
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
-                  ),
-                ],
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
     ),
   );
-  }
-}
-
+}}
 class ProfileInfo extends StatefulWidget {
   @override
   _ProfileInfoState createState() => _ProfileInfoState();
