@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:projectWawBeans/event/event_db.dart';
 import 'home_page.dart'; // Impor halaman tujuan untuk navigasi
 
 class PageLogin2 extends StatelessWidget {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -33,84 +35,100 @@ class PageLogin2 extends StatelessWidget {
                   ),
                 ),
                 Text(
-                    'Awali Harimu Dengan Baik.',
-                    style: GoogleFonts.getFont(
-                      'Poppins',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 20,
-                      color: Color(0xFFFFFFFF),
-                    ),
+                  'Awali Harimu Dengan Baik.',
+                  style: GoogleFonts.getFont(
+                    'Poppins',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                    color: Color(0xFFFFFFFF),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                ),
+                SizedBox(height: 20),
                 Container(
                   margin: EdgeInsets.fromLTRB(22, 0, 12, 47),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 14),
-                        decoration: BoxDecoration(
-                          color: Color(0xFFD9D9D9),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: TextField(
-                          controller: _usernameController,
-                          style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16,
-                            color: Color(0xFF000000),
+                  child: Form(
+                    key: _formKey,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(bottom: 14),
+                          decoration: BoxDecoration(
+                            color: Color(0xFFD9D9D9),
+                            borderRadius: BorderRadius.circular(15),
                           ),
-                          decoration: InputDecoration(
-                            hintText: 'Username',
-                            hintStyle: GoogleFonts.poppins(
+                          child: TextFormField(
+                            controller: _usernameController,
+                            style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w600,
                               fontSize: 16,
-                              color: Color(0xA6929292),
+                              color: Color(0xFF000000),
                             ),
-                            border: InputBorder.none,
-                            contentPadding: EdgeInsets.fromLTRB(16, 11.5, 16, 11.5),
+                            decoration: InputDecoration(
+                              hintText: 'Username',
+                              hintStyle: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
+                                color: Color(0xA6929292),
+                              ),
+                              border: InputBorder.none,
+                              contentPadding: EdgeInsets.fromLTRB(16, 11.5, 16, 11.5),
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Jangan Kosong';
+                              }
+                              return null;
+                            },
                           ),
                         ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Color(0xFFD9D9D9),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: TextField(
-                          controller: _passwordController,
-                          obscureText: true,
-                          style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16,
-                            color: Color(0xFF000000),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Color(0xFFD9D9D9),
+                            borderRadius: BorderRadius.circular(15),
                           ),
-                          decoration: InputDecoration(
-                            hintText: 'Password',
-                            hintStyle: GoogleFonts.poppins(
+                          child: TextFormField(
+                            controller: _passwordController,
+                            obscureText: true,
+                            style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w600,
                               fontSize: 16,
-                              color: Color(0xA6929292),
+                              color: Color(0xFF000000),
                             ),
-                            border: InputBorder.none,
-                            contentPadding: EdgeInsets.fromLTRB(16, 11.5, 16, 11.5),
+                            decoration: InputDecoration(
+                              hintText: 'Password',
+                              hintStyle: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
+                                color: Color(0xA6929292),
+                              ),
+                              border: InputBorder.none,
+                              contentPadding: EdgeInsets.fromLTRB(16, 11.5, 16, 11.5),
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Jangan Kosong';
+                              }
+                              return null;
+                            },
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-                SizedBox(
-                  height: 20,
-                ),
+                SizedBox(height: 20),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
-                    );
+                    if (_formKey.currentState!.validate()) {
+                      EventDb.login(_usernameController.text, _passwordController.text);
+                      _usernameController.clear();
+                      _passwordController.clear();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomePage()),
+                      );
+                    }
                   },
                   child: Container(
                     margin: EdgeInsets.fromLTRB(22, 0, 12.1, 30),
@@ -118,7 +136,7 @@ class PageLogin2 extends StatelessWidget {
                       color: Color(0xFFDE6D3D),
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                    padding: EdgeInsets.symmetric(vertical: 10),
                     child: Center(
                       child: Text(
                         'Lanjut',
@@ -155,9 +173,7 @@ class PageLogin2 extends StatelessWidget {
                             height: 1.3,
                           ),
                         ),
-                        TextSpan(
-                          text: ' & ',
-                        ),
+                        TextSpan(text: ' & '),
                         TextSpan(
                           text: 'Kebijakan Privasi ',
                           style: GoogleFonts.getFont(
