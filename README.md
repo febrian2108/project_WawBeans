@@ -14,6 +14,10 @@ https://bit.ly/3xe9UYy
 
 ## App UI WawBeans
 
+![1](https://imgur.com/ilMuheI.png) 
+
+![2](https://imgur.com/c3Fd9wu.png) 
+
 ![Login Page](https://imgur.com/uNOQufq.png) 
 
 ![Login Page2](https://imgur.com/iwaS39Z.png)
